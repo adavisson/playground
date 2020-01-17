@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SortForm from '../components/SortForm';
+import BubbleSort from './BubbleSort';
 
 const SortContainer = () => {
   const [size,setSize] = useState(0);
@@ -29,6 +30,10 @@ const SortContainer = () => {
     <div className="border">
       {desc()}
       <SortForm size={size} onChange={sizeChange} onSubmit={formSubmit} />
+      <div className="sortContainer">
+        <BubbleSort array={randArr} />
+        
+      </div>
     </div>
   );
 }
