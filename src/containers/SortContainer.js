@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SortForm from '../components/SortForm';
 import BubbleSort from './BubbleSort';
 import QuickSort from './QuickSort';
@@ -6,6 +6,7 @@ import QuickSort from './QuickSort';
 const SortContainer = () => {
   const [size,setSize] = useState(0);
   const [randArr, setRandArr] = useState([]);
+  const [randArr2, setRandArr2] = useState([]);
 
   const desc = () => {
     return(
@@ -25,15 +26,16 @@ const SortContainer = () => {
       arr.push(Math.floor(Math.random() * 10000))
     }
     setRandArr(arr);
+    setRandArr2(arr);
   }
 
   return (
     <div className="border">
       {desc()}
       <SortForm size={size} onChange={sizeChange} onSubmit={formSubmit} />
-      <div className="sort-container border-dashed">
+      <div className="sort-container">
         <BubbleSort array={randArr} />
-        <QuickSort array={randArr} />
+        <QuickSort array={randArr2} />
       </div>
     </div>
   );

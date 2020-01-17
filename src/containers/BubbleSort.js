@@ -25,16 +25,13 @@ const BubbleSort = (props) => {
         }
       }
     }
-    console.log(arr);
 
     const t2 = Date.now();
     setTime(Math.floor((t2 - t1)));
-    console.log(time);
-    //setStatus("Sorted");
   }
 
   return (
-    <div>
+    <div className="border-dashed">
       <h5>BubbleSort</h5>
       <p>Status: {status}</p>
       <p>Elapsed Time: {time} milliseconds</p>
