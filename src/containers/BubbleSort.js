@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const BubbleSort = () => {
+const BubbleSort = (props) => {
   const [time,setTime] = useState(0);
 
   return (

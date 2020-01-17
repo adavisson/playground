@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-const QuickSort = () => {
+const QuickSort = (props) => {
   const [time, setTime] = useState(0);
-  
+
   return (
     <div>
       <h5>QuickSort</h5>

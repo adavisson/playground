@@ -31,7 +31,7 @@ const SortContainer = () => {
     <div className="border">
       {desc()}
       <SortForm size={size} onChange={sizeChange} onSubmit={formSubmit} />
-      <div className="sortContainer border-dashed">
+      <div className="sort-container border-dashed">
         <BubbleSort array={randArr} />
         <QuickSort array={randArr} />
       </div>
