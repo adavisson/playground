@@ -16,8 +16,10 @@ const SortContainer = () => {
   }
 
   const formSubmit = e => {
+    e.preventDefault();
+
     const arr = []
-    for(let i=0; i<randArr.length(); i++){
+    for(let i = 0; i < size; i++){
       arr.push(Math.floor(Math.random() * 10000))
     }
     setRandArr(arr);
@@ -26,7 +28,7 @@ const SortContainer = () => {
   return (
     <div className="border">
       {desc()}
-      <SortForm size={size} onChange={sizeChange}/>
+      <SortForm size={size} onChange={sizeChange} onSubmit={formSubmit} />
     </div>
   );
 }
