@@ -3,6 +3,7 @@ import PalindromeForm from '../components/PalindromeForm';
 
 const Palindrome = () => {
   const [palWord, setPalWord] = useState("");
+  const [result, setResult] = useState("");
 
   const desc = () => {
     return (
@@ -16,17 +17,13 @@ const Palindrome = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const result = palTest(palWord);
-    console.log(result);
+    setResult(palTest(palWord));
   }
 
   const palTest = (input) => {
-    console.log(input);
-    console.log(palWord)
     const arr = input.split("");
 
     if (arr.length <= 1) {
-      console.log("success");
       return `${palWord} is a Palindrome.`
     }
 
@@ -34,9 +31,8 @@ const Palindrome = () => {
     const lastLetter = arr.pop();
 
     if (firstLetter.toLowerCase() == lastLetter.toLowerCase()){
-      palTest(arr.join(""));
+      return palTest(arr.join(""));
     } else {
-      console.log("failure");
       return `${palWord} is not a Palindrome.`
     }
   }
@@ -45,6 +41,7 @@ const Palindrome = () => {
     <div className="border">
       {desc()}
       <PalindromeForm palWord={palWord} handleChange={handleChange} handleSubmit={handleSubmit}/>
+      <p>{result}</p>
     </div>
   );
 }
