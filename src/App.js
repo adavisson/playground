@@ -4,6 +4,7 @@ import './App.css';
 import AppDescription from './components/AppDescription';
 import ButtonContainer from './containers/ButtonContainer';
 import SortContainer from './containers/SortContainer';
+import Palindrome from './containers/Palindrome';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <AppDescription />
       <ButtonContainer />
       <SortContainer />
+      <Palindrome />
     </div>
   );
 }
